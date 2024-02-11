@@ -4,37 +4,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="style.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Raleway:ital,wght@0,100;0,400;1,200&display=swap"
         rel="stylesheet">
-    <title>GraphQL</title>
+    <title>Graphql</title>
 </head>
 
 <body>
-    <h1 class="header">GraphQL</h1>
-
-
     <form id="loginForm">
-        <h1>Sign In</h1>
-        <label for="userInput">Username/Email</label>
-        <input type="text" id="userInput" placeholder="Email or Username" required>
+        <h1>Login</h1>
+        <label for="userInput">Username/email:</label>
+        <input type="text" id="userInput" placeholder="Enter username/email" required>
 
-        <label for="userPassword">Password</label>
-        <input type="text" id="password" placeholder="Password" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter password" required>
 
         <button id="loginButton" type="submit">Log In</button>
     </form>
-
     <div id="mainContainer">
+        <div id="userProfileContainer">
 
-        <button id="logoutButton">Log Out</button>
+            <div id="welcomeContainer">
+                <h1>Welcome, <span id="userLogin"></span></h1>
+                <button id="logoutButton">Log Out</button>
+            </div>
 
+            <div id="topDiv">
+                <div id="userInfo">
+                    <p>Name: <span id="name">John Doe</span></p>
+                    <p>Birthday: <span id="birthday">01/01/1990</span></p>
+                    <p>Email: <span id="email">johndoe@example.com</span></p>
+                    <p>Phone number: <span id="phoneNumber">123-456-7890</span></p>
+                    <p>Address: <span id="address">123 Street, City, Country</span></p>
+                </div>
+                <div id="auditSVGContainer">
+                    <svg id="auditSVG" width="200" height="200"></svg>
+                    <div id="rightSide">
+                        <div id="auditInfo">
+                            <p>Audit ratio: <span id="auditRatio">80%</span></p>
+                            <p>Audits done: <span id="auditsDone">100</span></p>
+                            <p>Audits received: <span id="auditsReceived">120</span></p>
+                        </div>
+                        <svg id="legendSVG" width="200" height="100"></svg>
+                    </div>
+                </div>
+            </div>
+            <div id="xpTransactionGraph">
+                <div id="tooltip" style="display: none;"></div>
+                <select id="graphSelector">
+                    <option value="div-01">Div-01 Graph</option>
+                    <option value="piscine-js">Piscine-JS Graph</option>
+                    <option value="piscine-go">Piscine-Go Graph</option>
+                </select>
+                <div id="div-01Graph" class="graphContainer">
+                    <h2>Div-01</h2>
+                    <p>Total XP: <span id="div-01XP">5000</span></p>
+                    <svg id="div-01SVG" width="900" height="450"></svg>
+                </div>
+                <div id="piscine-jsGraph" class="graphContainer" style="display: none;">
+                    <h2>Piscine JS</h2>
+                    <p>Total XP: <span id="piscine-jsXP">6000</span></p>
+                    <svg id="piscine-jsSVG" width="900" height="450"></svg>
+                </div>
+                <div id="piscine-goGraph" class="graphContainer" style="display: none;">
+                    <h2>Piscine GO</h2>
+                    <p>Total XP: <span id="piscine-goXP">4500</span></p>
+                    <svg id="piscine-goSVG" width="900" height="450"></svg>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <script>
-
-    </script>
+    <script type="module" src="app.js"></script>
 </body>
 
 </html>
