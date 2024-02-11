@@ -4,7 +4,6 @@ export function auditGraph(auditData) {
   const svgWidth = 200;
   const svgHeight = 200;
   const radius = Math.min(svgWidth, svgHeight) / 2;
-  const auditSVG = document.getElementById("auditSVG");
   const legendSVG = document.getElementById("legendSVG");
 
   let totalAudits = 0;
@@ -14,9 +13,6 @@ export function auditGraph(auditData) {
 
   let startAngle = 0;
   let endAngle = 0;
-
-  const colors = ["#D9F2DF", "#BE419F"];
-  const labels = ["Audits not done", "Audits done"];
 
   let legendX = 10;
   let legendY = 40;
@@ -33,9 +29,6 @@ export function auditGraph(auditData) {
     text.setAttribute("x", legendX + 30);
     text.setAttribute("y", legendY + 15);
     text.textContent = labels[i];
-
-    legendSVG.appendChild(rect);
-    legendSVG.appendChild(text);
 
     legendY -= 30;
   }
